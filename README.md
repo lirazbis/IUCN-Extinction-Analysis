@@ -1,0 +1,1 @@
+This code includes downloading data using IUCN red species API, extracting the year of extinction and plotting cumulative extinction over time.

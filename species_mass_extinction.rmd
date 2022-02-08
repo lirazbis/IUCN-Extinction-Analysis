@@ -132,9 +132,16 @@ finalcumsum_phylum <- finalcumsum %>%
   filter(class_name %in% c("AMPHIBIA", "AVES", "MAMMALIA", "REPTILIA", "ACTINOPTERYGII"))
 
 ggplot(data=finalcumsum_phylum, mapping = aes(x=new_century, y=RelativeEX)) + 
-  geom_line(aes(color=class_name), size=1)+
-  labs(x="Century", y="Cumulative extinctions (% of total)") + 
+  geom_line(aes(color=class_name), size=1.5)+
+  labs(x="Century", y="Cumulative extinctions as % of species") + 
   ylim(0,2) + xlim(15,21)+
-  theme_classic()
+  theme_classic() +
+  theme(title = element_text(color="grey20", size= 15),
+        legend.title = element_text(color = "grey20", size = 15),
+        legend.text = element_text(size = 13),
+        axis.text.x = element_text(color = "grey20", size = 15),
+        axis.text.y = element_text(color = "grey20", size = 15),
+        axis.title.x = element_text(color = "grey20", size = 15),
+        axis.title.y = element_text(color = "grey20", size = 15)) + 
+        scale_colour_discrete("Class name", labels = c("Ray-finned fishes", "Amphibians", "Birds", "Mammals", "Reptiles"))
 ```
-
